@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import NoteListNav from '../NoteListNav/NoteListNav'
+import FolderListNav from '../FolderListNav/FolderListNav'
 import NotePageNav from '../NotePageNav/NotePageNav'
 import NoteListMain from '../NoteListMain/NoteListMain'
 import NotePageMain from '../NotePageMain/NotePageMain'
@@ -11,8 +11,8 @@ import ApiContext from '../ApiContext'
 import config from '../config'
 import './App.css'
 import NotefulFormError from "../errors/NotefulFormError";
-import NotefulForm from '../NotefulForm/NotefulForm';
-import { debug } from 'util';
+// import NotefulForm from '../NotefulForm/NotefulForm';
+// import { debug } from 'util';
 
 class App extends Component {
   state = {
@@ -24,7 +24,7 @@ class App extends Component {
     
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/notes`),// initial fetch for landing page; shows all folders and all notes
-      fetch(`${config.API_ENDPOINT}/api/folders`)
+      fetch(`${config.API_ENDPOINT}/api/folders`) //todo move each of these to services
     ])
       .then(([notesRes, foldersRes]) => {
         if (!notesRes.ok)
@@ -38,7 +38,10 @@ class App extends Component {
         ])
       })
       .then(([notes, folders]) => {
-        this.setState({ notes, folders })
+        this.setState({ notes, folders },
+          ()=>{
+            console.log(this.state)
+          })
        
       })
       .catch(error => {
@@ -104,13 +107,13 @@ class App extends Component {
             exact
             key={'/'}// nav view (list) for home/landing page
             path={'/'}
-            component={NoteListNav}
+            component={FolderListNav}
           />    
           <Route
             exact
             key={'/folder/:folderid'}// nav view (list) when folder selected
             path={'/folder/:folderid'}
-            component={NoteListNav}
+            component={FolderListNav}
           />
  
         <Route

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import './Note.css'
-
+import NoteService from '../services/noteService'
 export default class Note extends React.Component {
   static defaultProps ={
     onDeleteNote: () => {},
@@ -17,21 +17,12 @@ export default class Note extends React.Component {
     
     const note_id = this.props.id
     
-    fetch(`${config.API_ENDPOINT}/api/note/${note_id}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json'
-      },
-    }) 
-    .then(res => {
-      // if (!res.ok) {
-        if (!res.ok)
-        return res.json().then(e => Promise.reject(e))
-      return res.json()
-          // throw new Error()
-      // }
-    })
+
+
+  
+    NoteService.deleteNote(note_id)
     .then(()=>{
+      console.log('got herrrr')
       this.context.deleteNote(note_id) // from handle delete note func in app.js (filters store)
                                             // allows the parent comp to perform extra behaviour
       this.props.onDeleteNote(note_id) // from handle delete note function in notepagemain (pushes '/' endpoint to props.history)

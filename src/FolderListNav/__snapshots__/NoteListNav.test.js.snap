@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NoteListNav component renders a .NoteListNav by default 1`] = `
+exports[`FolderListNav component renders a .FolderListNav by default 1`] = `
 <div
-  className="NoteListNav"
+  className="FolderListNav"
 >
   <ul
-    className="NoteListNav__list"
+    className="FolderListNav__list"
   />
   <div
-    className="NoteListNav__button-wrapper"
+    className="FolderListNav__button-wrapper"
   >
     <NavCircleButton
-      className="NoteListNav__add-folder-button"
+      className="FolderListNav__add-folder-button"
       tag={[Function]}
       to="/add-folder"
       type="button"
@@ -41,9 +41,9 @@ exports[`NoteListNav component renders a .NoteListNav by default 1`] = `
 </div>
 `;
 
-exports[`NoteListNav component renders a link in ul for each folder in array 1`] = `
+exports[`FolderListNav component renders a link in ul for each folder in array 1`] = `
 <ul
-  className="NoteListNav__list"
+  className="FolderListNav__list"
 >
   <li
     key="b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
@@ -51,11 +51,11 @@ exports[`NoteListNav component renders a link in ul for each folder in array 1`]
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="NoteListNav__folder-link"
+      className="FolderListNav__folder-link"
       to="/folder/b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1"
     >
       <span
-        className="NoteListNav__num-notes"
+        className="FolderListNav__num-notes"
       >
         2
       </span>
@@ -68,11 +68,11 @@ exports[`NoteListNav component renders a link in ul for each folder in array 1`]
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="NoteListNav__folder-link"
+      className="FolderListNav__folder-link"
       to="/folder/b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1"
     >
       <span
-        className="NoteListNav__num-notes"
+        className="FolderListNav__num-notes"
       >
         2
       </span>
@@ -85,11 +85,11 @@ exports[`NoteListNav component renders a link in ul for each folder in array 1`]
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="NoteListNav__folder-link"
+      className="FolderListNav__folder-link"
       to="/folder/b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1"
     >
       <span
-        className="NoteListNav__num-notes"
+        className="FolderListNav__num-notes"
       >
         0
       </span>
