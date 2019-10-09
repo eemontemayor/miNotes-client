@@ -18,9 +18,21 @@ const FolderService = {
                 return res.json()
             })
     },
-    deleteFolder(folderId){
-
-    },
+    deleteFolder(folderid){
+      return fetch(`${config.API_ENDPOINT}/api/folder/${folderid}`, {
+          method: 'DELETE',
+          headers: {
+            'content-type': 'application/json'
+          },
+        }) 
+        .then(res => {
+         
+            if (!res.ok)
+            return res.json().then(e => Promise.reject(e))
+            else
+            return res.json()
+        })
+      },  
     // editFolder(){
 
     // },

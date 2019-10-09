@@ -6,7 +6,7 @@ import CircleButton from '../CircleButton/CircleButton'
 import ApiContext from '../ApiContext'
 import { getNotesForFolder } from '../notes-helpers'
 import './NoteListMain.css'
-
+import FolderServices from '../services/folderService'
 export default class NoteListMain extends React.Component {
   static defaultProps = {
     match: {
@@ -48,7 +48,19 @@ componentDidMount(){
             <br />
             Note
           </CircleButton>
+          
         </div>
+        <div className= 'NoteListMain__button-container'>
+          {(notesForFolder.length===0 && folderId) && <CircleButton
+          type='button'
+          className='NoteListMain_del-folder-button'
+          onClick={()=>{
+            FolderServices.deleteFolder(folderId)
+            this.context.deleteFolder(folderId)}}
+          >
+
+          </CircleButton>}
+          </div>
       </section>
     )
   }
