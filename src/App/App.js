@@ -73,13 +73,9 @@ class App extends Component {
     })
   }
 
-  // handleDeleteFolder = folderId => {
-  //   this.setState({
-  //     folders:[
-
-  //     ]
-  //   })
-  // }
+  handleDeleteFolder = folderId => {
+      console.log('deleting folder #', folderId)
+  }
 
 
 
@@ -92,6 +88,7 @@ class App extends Component {
       addFolder: this.handleAddFolder,
       addNote: this.handleAddNote,
       deleteNote: this.handleDeleteNote,
+      deleteFolder:this.handleDeleteFolder,
     }
   
     return (

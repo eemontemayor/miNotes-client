@@ -24,29 +24,26 @@ export default class Note extends React.Component {
       },
     }) 
     .then(res => {
-      if (!res.ok) {
-        
-      
-        
-          throw new Error()
-        
-      }
-      
-    
-       
-        this.context.deleteNote(note_id) // from handle delete note func in app.js (filters store)
-        // allow parent to perform extra behaviour
-        this.props.onDeleteNote(note_id) // from handle delete note function in notepagemain (pushes '/' endpoint to props.history)
-      })
-      .catch(error => {
-        
+      // if (!res.ok) {
+        if (!res.ok)
+        return res.json().then(e => Promise.reject(e))
+      return res.json()
+          // throw new Error()
+      // }
+    })
+    .then(()=>{
+      this.context.deleteNote(note_id) // from handle delete note func in app.js (filters store)
+                                            // allows the parent comp to perform extra behaviour
+      this.props.onDeleteNote(note_id) // from handle delete note function in notepagemain (pushes '/' endpoint to props.history)
+    })
+    .catch(error => {
         console.error({ error })
       })
   }
 
   render() {
     
-    const { name, id } = this.props
+    const { name, id, mod } = this.props
     return (
       <div className='Note'>
         <h2 className='Note__title'>
@@ -63,15 +60,15 @@ export default class Note extends React.Component {
           {' '}
           remove
         </button>
-        {/* <div className='Note__dates'>
+        <div className='Note__dates'>
           <div className='Note__dates-modified'>
             Modified
             {' '}
             <span className='Date'>
-              {format(modified, 'Do MMM YYYY')}
+              {format(mod, 'Do MMM YYYY')}
             </span>
           </div>
-        </div> */}
+        </div>
       </div>
     )
   }

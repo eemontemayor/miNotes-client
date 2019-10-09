@@ -1,8 +1,8 @@
 
 .Note {
   --note-height: 88px;
-  background-color: #010d1e;
-  color: #cacaca;
+  background-color: #e2e2e2;
+  color: #131313;
   height: var(--note-height);
   margin-bottom: 8px;
   max-width: 380px;
@@ -39,7 +39,7 @@
   min-height: 24px;
 }
 .Note__title a {
-  color: #cacaca;
+  color: #000000;
   display: block;
   text-decoration: none;
 }
