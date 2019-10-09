@@ -73,6 +73,13 @@ class App extends Component {
     })
   }
 
+  // handleDeleteFolder = folderId => {
+  //   this.setState({
+  //     folders:[
+
+  //     ]
+  //   })
+  // }
 
 
 
@@ -128,7 +135,7 @@ class App extends Component {
           </NotefulFormError>
           <header className='App__header'>
             <h1>
-              <Link to='/'>Noteful</Link> 
+              <Link to='/'>miNotes</Link> 
               {' '}
               <FontAwesomeIcon icon='check-double' />
             </h1>
