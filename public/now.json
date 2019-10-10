@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "alias": "quique-note-app",
+    "alias": "quique-minotes",
     "name": "noteful-app",
     "routes": [
         {
