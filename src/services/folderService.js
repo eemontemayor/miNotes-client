@@ -36,9 +36,9 @@ const FolderService = {
     // editFolder(){
 
     // },
-    getFolders(){
+    // getFolders(){
 
-    }
+    // }
 
 }
 

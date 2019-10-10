@@ -81,7 +81,7 @@ class App extends Component {
       this.setState({
         folders: this.state.folders.filter(item => item.id != folderId)
       })
-      console.log(this.state)
+  
   }
 
 

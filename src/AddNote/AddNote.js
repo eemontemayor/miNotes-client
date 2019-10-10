@@ -99,7 +99,7 @@ export default class AddNote extends Component {
   }
   render() {
     const { folders=[] } = this.context
-    console.log(this.state)
+    
     
     return (
       <section className='AddNote'>

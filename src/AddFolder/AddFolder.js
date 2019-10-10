@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NotefulForm from '../NotefulForm/NotefulForm'
 import ApiContext from '../ApiContext'
-import config from '../config'
+// import config from '../config'
 import './AddFolder.css'
 import FolderService from '../services/folderService'
 
@@ -33,13 +33,13 @@ export default class AddFolder extends Component {
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
-    console.log(name, capName);
+    // console.log(name, capName);
     this.setState({capName}, () => this.validateFolder(capName));
   };
 
 
   validateFolder = (name) => {
-    console.log('here', name)
+    
     const validationMessages = {...this.state.validationMessages};
     let folderValid = true;
    
