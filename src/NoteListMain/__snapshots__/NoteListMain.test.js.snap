@@ -36,6 +36,37 @@ exports[`NoteListMain component renders a .NoteListMain by default 1`] = `
       Note
     </NavCircleButton>
   </div>
+  <div
+    className="NoteListMain__button-container"
+  >
+    <NavCircleButton
+      className="NoteListMain_del-folder-button"
+      onClick={[Function]}
+      tag="a"
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="trash-alt"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+       
+      remove folder
+    </NavCircleButton>
+  </div>
 </section>
 `;
 
