@@ -17,3 +17,11 @@
   background-color: #29862e;
   color: white;
 }
+.NoteListMain_del-folder-button:hover{
+  background-color:red;
+  color:white
+}
+.NoteListMain_del-folder-button{
+  position: relative;
+float:right;
+}

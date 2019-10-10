@@ -9,6 +9,9 @@ import './NoteListMain.css'
 import FolderServices from '../services/folderService'
 export default class NoteListMain extends React.Component {
   static defaultProps = {
+    history: {
+      goBack: () => { }
+    },
     match: {
       params: {}
     }
@@ -17,13 +20,14 @@ export default class NoteListMain extends React.Component {
 
 componentDidMount(){
   console.log(this.context.notes)
+
 }
 
   render() {
     const  folderId  = this.props.match.params.folderid
     const { notes=[]} = this.context
     const notesForFolder = getNotesForFolder(notes, folderId)
-    
+    console.log(notesForFolder, "folder notes")
     return (
       <section className='NoteListMain'>
         <ul>
@@ -51,16 +55,19 @@ componentDidMount(){
           
         </div>
         <div className= 'NoteListMain__button-container'>
-          {(notesForFolder.length===0 && folderId) && <CircleButton
+          { notesForFolder.length === 0 && <CircleButton
           type='button'
           className='NoteListMain_del-folder-button'
           onClick={()=>{
             //todo: fix below or fix conditional
             this.context.deleteFolder(folderId)
             FolderServices.deleteFolder(folderId)
+            this.props.history.push('/')
           }}
           >
-
+            <FontAwesomeIcon icon='trash-alt' />
+          {' '}
+          remove folder
           </CircleButton>}
           </div>
       </section>

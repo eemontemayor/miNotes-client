@@ -121,7 +121,7 @@ class App extends Component {
           />
  
         <Route
-          path='/api/note/:note_id' // nav view for when a note is selected
+          path='/note/:note_id' // nav view for when a note is selected
           component={NotePageNav}
         />
         <Route

@@ -20,6 +20,7 @@ export default class AddFolder extends Component {
 
   state ={
     name: '', 
+    capName:'',
     folderValid: false,
     formValid: false,
     validationMessages: {}
@@ -28,13 +29,17 @@ export default class AddFolder extends Component {
   static contextType = ApiContext;
 
   setFolder = (name) => {
-    console.log(name);
-    this.setState({name}, () => this.validateFolder(name));
+    let capName = name.toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+    console.log(name, capName);
+    this.setState({capName}, () => this.validateFolder(capName));
   };
 
 
   validateFolder = (name) => {
-  
+    console.log('here', name)
     const validationMessages = {...this.state.validationMessages};
     let folderValid = true;
    
@@ -63,8 +68,12 @@ export default class AddFolder extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
+    const name = e.target['folder-name'].value.toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
     const folder = {
-      folder_name: e.target['folder-name'].value
+      folder_name: name
     }
     FolderService.addFolder(folder)
       .then(folder => {

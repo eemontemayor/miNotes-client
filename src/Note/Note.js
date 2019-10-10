@@ -22,10 +22,10 @@ export default class Note extends React.Component {
 
 
   
-    NoteService.deleteNote(note_id)
+    NoteService.deleteNote(note_id) // deletes from database
     .then(()=>{
      
-      this.context.deleteNote(note_id) // from handle delete note func in app.js (filters store)
+      this.context.deleteNote(note_id) // from handle delete note func in app.js (filters state)
                                             // allows the parent comp to perform extra behaviour
       this.props.onDeleteNote(note_id) // from handle delete note function in notepagemain (pushes '/' endpoint to props.history)
     })
