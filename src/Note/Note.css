@@ -8,6 +8,7 @@
   max-width: 380px;
   padding: 8px 0 8px 8px;
   position: relative;
+  box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.281) ;
 }
 
 .Note__delete {

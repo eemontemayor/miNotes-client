@@ -19,8 +19,8 @@
 }
 
 .FolderListNav__folder-link {
-  background-color: #1f03034b;
-  color: #b5b3b3;
+  background-color: #1b1b1b65;
+  color: #ffffff;
   display: block;
   font-family: var(--custom-font);
   font-size: 20px;
@@ -34,7 +34,8 @@
   cursor: pointer;
 }
 .FolderListNav__folder-link.active {
-  background-color: #102541;
+  background-color: #f5f5f5;
+  color:black;
   opacity:100;
 }
 
