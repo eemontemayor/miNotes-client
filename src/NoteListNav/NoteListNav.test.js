@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import FolderListNav from './FolderListNav'
+import NoteListNav from './NoteListNav'
 
-describe(`FolderListNav component`, () => {
-  it('renders a .FolderListNav by default', () => {
-    const wrapper = shallow(<FolderListNav />)
+describe(`NoteListNav component`, () => {
+  it('renders a .NoteListNav by default', () => {
+    const wrapper = shallow(<NoteListNav />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
@@ -57,7 +57,7 @@ describe(`FolderListNav component`, () => {
         }
       ]
     }
-    const ul = shallow(<FolderListNav />, context)
+    const ul = shallow(<NoteListNav />, context)
       .find('ul')
     expect(toJson(ul)).toMatchSnapshot()
   })

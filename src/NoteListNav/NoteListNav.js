@@ -4,24 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CircleButton from '../CircleButton/CircleButton'
 import ApiContext from '../ApiContext'
 import { countNotesForFolder } from '../notes-helpers'
-import './FolderListNav.css'
+import './NoteListNav.css'
 
-export default class FolderListNav extends React.Component {
+export default class NoteListNav extends React.Component {
   static contextType = ApiContext;
 
   render() {
     const { folders=[], notes=[] } = this.context
     
     return (
-      <div className='FolderListNav'>
-        <ul className='FolderListNav__list'>
+      <div className='NoteListNav'>
+        <ul className='NoteListNav__list'>
           {folders.map(folder => // map method to display all of the folder / navlinks
             <li key={folder.id}>
               <NavLink
-                className='FolderListNav__folder-link'
+                className='NoteListNav__folder-link'
                 to={`/folder/${folder.id}`}
               >
-                <span className='FolderListNav__num-notes'>
+                <span className='NoteListNav__num-notes'>
                   {()=>{countNotesForFolder(notes, folder.id)}}
                 </span>
                 {folder.folder_name}
@@ -29,12 +29,12 @@ export default class FolderListNav extends React.Component {
             </li>
           )}
         </ul>
-        <div className='FolderListNav__button-wrapper'>
+        <div className='NoteListNav__button-wrapper'>
           <CircleButton
             tag={Link}
             to='/add-folder'
             type='button'
-            className='FolderListNav__add-folder-button'
+            className='NoteListNav__add-folder-button'
           >
             <FontAwesomeIcon icon='plus' />
             <br />

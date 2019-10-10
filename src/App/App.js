@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import FolderListNav from '../FolderListNav/FolderListNav'
+import NoteListNav from '../NoteListNav/NoteListNav'
 import NotePageNav from '../NotePageNav/NotePageNav'
 import NoteListMain from '../NoteListMain/NoteListMain'
 import NotePageMain from '../NotePageMain/NotePageMain'
@@ -111,13 +111,13 @@ class App extends Component {
             exact
             key={'/'}// nav view (list) for home/landing page
             path={'/'}
-            component={FolderListNav}
+            component={NoteListNav}
           />    
           <Route
             exact
             key={'/folder/:folderid'}// nav view (list) when folder selected
             path={'/folder/:folderid'} //
-            component={FolderListNav}
+            component={NoteListNav}
           />
  
         <Route
