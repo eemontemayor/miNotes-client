@@ -41,13 +41,13 @@ export default class AddFolder extends Component {
     if (name.length <= 1){
       validationMessages.name = 'Name must be at least 2 character long.';
       folderValid = false;
-      throw Error;
+      // throw Error;
    
     } else if (name.length > 15){
       validationMessages.name = 'Name must be no more than 15 characters long.';
       folderValid = false;
       console.log(' folder error if more than 15')
-      throw Error;
+      // throw Error;
     }
 
     this.setState({validationMessages, folderValid, }, this.validateForm);
@@ -67,18 +67,6 @@ export default class AddFolder extends Component {
       folder_name: e.target['folder-name'].value
     }
     FolderService.addFolder(folder)
-    // fetch(`${config.API_ENDPOINT}/api/folders`, { // todo: move this to services
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json'
-    //   },
-    //   body: JSON.stringify(folder),
-    // })
-    //   .then(res => {
-    //     if (!res.ok)
-    //       return res.json().then(e => Promise.reject(e))
-    //       return res.json()
-    //   })
       .then(folder => {
         this.context.addFolder(folder)
         this.props.history.push(`/folder/${folder.id}`)

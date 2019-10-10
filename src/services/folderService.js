@@ -27,10 +27,10 @@ const FolderService = {
         }) 
         .then(res => {
          
-            if (!res.ok)
-            return res.json().then(e => Promise.reject(e))
-            else
-            return res.json()
+          if (!res.ok)
+          // return res.json().then(e => Promise.reject(e))
+          // return res.json()
+          throw new Error()
         })
       },  
     // editFolder(){

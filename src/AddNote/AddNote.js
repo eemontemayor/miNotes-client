@@ -15,7 +15,8 @@ export default class AddNote extends Component {
   state ={
     note_name: '', nameValid: false,
     content: '', contentValid: false,
-    folderid: '', folderValid: false,
+    folderid: '',
+     folderValid: false,
     formValid: false,
     validationMessages: {}
   };
@@ -98,6 +99,7 @@ export default class AddNote extends Component {
   }
   render() {
     const { folders=[] } = this.context
+    console.log(this.state)
     
     return (
       <section className='AddNote'>

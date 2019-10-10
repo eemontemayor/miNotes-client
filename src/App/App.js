@@ -79,7 +79,7 @@ class App extends Component {
   handleDeleteFolder = folderId => {
       console.log('deleting folder #', folderId)
       this.setState({
-        folders: this.state.folders.filter(item => item.id != folderId)//var change
+        folders: this.state.folders.filter(item => item.id != folderId)
       })
       console.log(this.state)
   }
@@ -116,7 +116,7 @@ class App extends Component {
           <Route
             exact
             key={'/folder/:folderid'}// nav view (list) when folder selected
-            path={'/folder/:folderid'}
+            path={'/folder/:folderid'} //
             component={FolderListNav}
           />
  

@@ -55,8 +55,10 @@ componentDidMount(){
           type='button'
           className='NoteListMain_del-folder-button'
           onClick={()=>{
+            //todo: fix below or fix conditional
+            this.context.deleteFolder(folderId)
             FolderServices.deleteFolder(folderId)
-            this.context.deleteFolder(folderId)}}
+          }}
           >
 
           </CircleButton>}

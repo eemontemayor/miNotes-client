@@ -6,6 +6,8 @@ import ApiContext from '../ApiContext'
 import config from '../config'
 import './Note.css'
 import NoteService from '../services/noteService'
+
+
 export default class Note extends React.Component {
   static defaultProps ={
     onDeleteNote: () => {},
@@ -22,7 +24,7 @@ export default class Note extends React.Component {
   
     NoteService.deleteNote(note_id)
     .then(()=>{
-      console.log('got herrrr')
+     
       this.context.deleteNote(note_id) // from handle delete note func in app.js (filters store)
                                             // allows the parent comp to perform extra behaviour
       this.props.onDeleteNote(note_id) // from handle delete note function in notepagemain (pushes '/' endpoint to props.history)
