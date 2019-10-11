@@ -16,12 +16,13 @@
   grid-area: sidebar;
   height: 100vh;
   overflow: auto;
-  box-shadow: 0px 0px 30px 10px rgba(10, 10, 10, 0.76) inset
+  box-shadow: 0px 0px 10px 0px rgba(10, 10, 10, 0.486) inset
 }
 
 .App__header {
   background-color: #000000e5;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.596);
+
   color: #bdbdbd;
   font-family: var(--custom-font);
   grid-area: header;
@@ -43,4 +44,10 @@
   padding:25px;
   box-shadow: 0px 10px 10px grey inset;
 
+}
+@media (min-width:760px){
+  .App__nav{
+    box-shadow: 0px 0px 30px 10px rgba(10, 10, 10, 0.76) inset
+
+  }
 }
