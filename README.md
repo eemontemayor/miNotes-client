@@ -1,4 +1,4 @@
-# Noteful Client
+# miNotes Client
 
 
 ### Summary
