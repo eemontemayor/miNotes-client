@@ -64,7 +64,7 @@ exports[`NoteListMain component renders a .NoteListMain by default 1`] = `
         transform={null}
       />
        
-      remove folder
+      folder
     </NavCircleButton>
   </div>
 </section>
