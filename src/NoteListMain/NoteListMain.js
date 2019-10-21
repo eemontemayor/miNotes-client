@@ -64,7 +64,7 @@ export default class NoteListMain extends React.Component {
           >
             <FontAwesomeIcon icon='trash-alt' />
           {' '}
-          remove folder
+           folder
           </CircleButton>}
           </div>
       </section>
