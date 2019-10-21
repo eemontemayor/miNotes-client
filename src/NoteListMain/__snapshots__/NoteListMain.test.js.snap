@@ -63,6 +63,7 @@ exports[`NoteListMain component renders a .NoteListMain by default 1`] = `
         title=""
         transform={null}
       />
+      <br />
        
       folder
     </NavCircleButton>
