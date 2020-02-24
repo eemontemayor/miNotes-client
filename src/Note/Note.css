@@ -1,10 +1,11 @@
 
 .Note {
   --note-height: 88px;
-  background-color: #e2e2e2;
+  background-color: #ffffff;
   color: #131313;
   height: var(--note-height);
   margin-bottom: 8px;
+  text-align: center;
   max-width: 380px;
   padding: 8px 0 8px 8px;
   position: relative;

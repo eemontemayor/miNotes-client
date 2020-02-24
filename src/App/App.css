@@ -5,18 +5,18 @@
     sans-serif;
   display: grid;
   grid-template-areas: "sidebar header" "sidebar main";
-  grid-template-columns: 1fr 2.3fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 120px 1fr;
   min-height: 100vh;
 }
 
 .App__nav {
-  background-color: #575757;
-  color: #fff;
+  background-color: #f2f2f2;
+  
   grid-area: sidebar;
   height: 100vh;
   overflow: auto;
-  box-shadow: 0px 0px 10px 0px rgba(10, 10, 10, 0.486) inset
+  /* box-shadow: 0px 0px 5px 5px rgba(10, 10, 10, 0.486) inset */
 }
 
 .App__header {
@@ -37,7 +37,7 @@
 }
 
 .App__main {
-  background-color: #e9e9e9;
+  background-color: #ffffff;
   grid-area: main;
   height: calc(100vh - 120px);
   overflow: auto;
@@ -47,7 +47,7 @@
 }
 @media (min-width:760px){
   .App__nav{
-    box-shadow: 0px 0px 30px 10px rgba(10, 10, 10, 0.76) inset
+    /* box-shadow: 0px 0px 30px 10px rgba(10, 10, 10, 0.76) inset */
 
   }
 }
