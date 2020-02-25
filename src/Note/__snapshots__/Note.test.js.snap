@@ -107,7 +107,7 @@ exports[`Note component renders the Note given props 1`] = `
       <span
         className="Date"
       >
-        Invalid Date
+        01 15 2019
       </span>
     </div>
   </div>
