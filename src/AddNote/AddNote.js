@@ -35,6 +35,8 @@ export default class AddNote extends Component {
       folderid: e.target['note-folder-id'].value,
       modified: new Date(),
     }
+
+   
     fetch(`${config.API_ENDPOINT}/api/notes`, {
       method: 'POST',
       headers: {
@@ -67,25 +69,27 @@ export default class AddNote extends Component {
     let contentValid= true;
     let folderValid= true;
 
-    if (name.length < 2){
-      validationMessages.name = 'Name must be at least two character long.';
+    if (name.length < 2 || name.length>20){
+      validationMessages.name = 'Name must be at least two character long and less than 20.';
       nameValid = false;
       console.log(' name error if less than two')
-      throw Error
+      alert('Name must be at least two character long.')
+      // throw Error
      
     } else if (content.length < 2){
       validationMessages.content = 'Content must be at least two character long.';
       contentValid = false;
       console.log(' content error if less than two')
-      throw Error
+      alert('Content must be at least two character long.')
+      // throw Error
       
     } else if (folder === null){ /// trying to find a way to access the value of inputfolder to finish validation
       validationMessages.folder = 'must select an available folder';
       folderValid= false;
-  
+      alert('must select an available folder')
  
       
-      throw Error
+      // throw Error
       
     }else{
 

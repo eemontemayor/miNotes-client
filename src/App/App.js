@@ -141,7 +141,7 @@ class App extends Component {
             <h1>
               <Link to='/'>miNotes</Link> 
               {' '}
-              <FontAwesomeIcon icon='check-double' />
+              <FontAwesomeIcon className='header-icon'icon='check-double' />
             </h1>
           </header>
           <NotefulFormError>

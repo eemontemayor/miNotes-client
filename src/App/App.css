@@ -9,7 +9,9 @@
   grid-template-rows: 120px 1fr;
   min-height: 100vh;
 }
-
+.header-icon{
+  color:black
+}
 .App__nav {
   background-color: #f2f2f2;
   
@@ -20,7 +22,7 @@
 }
 
 .App__header {
-  background-color: #000000e5;
+  background-color: #FFB72F;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.596);
 
   color: #bdbdbd;
