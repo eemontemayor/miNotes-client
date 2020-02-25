@@ -7,6 +7,7 @@ import NoteListMain from '../NoteListMain/NoteListMain'
 import NotePageMain from '../NotePageMain/NotePageMain'
 import AddFolder from '../AddFolder/AddFolder'
 import AddNote from '../AddNote/AddNote'
+import EditNote from '../EditNote/EditNoteForm'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import './App.css'
@@ -84,7 +85,9 @@ class App extends Component {
   
   }
 
-
+  updateNote = () => {
+    
+  }
 
 
   render() {
@@ -95,7 +98,8 @@ class App extends Component {
       addFolder: this.handleAddFolder,
       addNote: this.handleAddNote,
       deleteNote: this.handleDeleteNote,
-      deleteFolder:this.handleDeleteFolder,
+      deleteFolder: this.handleDeleteFolder,
+      updateNote:this.updateNote
     }
   
     return (
@@ -141,7 +145,7 @@ class App extends Component {
             <h1>
               <Link to='/'>miNotes</Link> 
               {' '}
-              <FontAwesomeIcon icon='check-double' />
+              <FontAwesomeIcon className='header-icon'icon='check-double' />
             </h1>
           </header>
           <NotefulFormError>
@@ -177,6 +181,10 @@ class App extends Component {
           path='/add-note' // main view for adding a note
           component={AddNote}
         />
+           <Route
+            path='/edit/:note_id'
+            component={EditNote}
+          />
       
           </main>
 
