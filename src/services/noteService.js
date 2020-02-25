@@ -17,7 +17,21 @@ const NoteService = {
             throw new Error()
         }
       })
-    },  
+  },  
+  getNoteById(note_id) {
+    return fetch(`${config.API_ENDPOINT}/api/note/${note_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      },
+     
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+    },
     addNote(newNote){
         return fetch(`${config.API_ENDPOINT}/api/notes`, {
             method: 'POST',

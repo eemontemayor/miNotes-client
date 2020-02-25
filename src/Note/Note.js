@@ -18,10 +18,7 @@ export default class Note extends React.Component {
     e.preventDefault() 
     
     const note_id = this.props.id
-    
 
-
-  
     NoteService.deleteNote(note_id) // deletes from database
     .then(()=>{
      
@@ -34,11 +31,13 @@ export default class Note extends React.Component {
       })
   }
 
+
+
   render() {
     const { name, id, modified } = this.props
-    console.log(this.props)
+    
     const date = format(modified, 'MM DD YYYY')
-    console.log(date,'<<<')
+   
     return (
       <div className='Note'>
         <h2 className='Note__title'>
@@ -46,6 +45,15 @@ export default class Note extends React.Component {
             {name}
           </Link>
         </h2>
+        {/* <button className='Note__edit'
+          type='button'
+        >
+          <Link to={`/edit/${id}`}>
+          <FontAwesomeIcon icon='pen' />
+          {' '}
+          edit
+        </Link>
+        </button> */}
         <button
           className='Note__delete'
           type='button'
