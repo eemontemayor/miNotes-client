@@ -74,14 +74,14 @@ export default class AddNote extends Component {
       nameValid = false;
       console.log(' name error if less than two')
       alert('Name must be at least two character long.')
-      // throw Error
+      throw Error
      
     } else if (content.length < 2){
       validationMessages.content = 'Content must be at least two character long.';
       contentValid = false;
       console.log(' content error if less than two')
       alert('Content must be at least two character long.')
-      // throw Error
+      throw Error
       
     } else if (folder === null){ /// trying to find a way to access the value of inputfolder to finish validation
       validationMessages.folder = 'must select an available folder';
@@ -89,7 +89,7 @@ export default class AddNote extends Component {
       alert('must select an available folder')
  
       
-      // throw Error
+      throw Error
       
     }else{
 
